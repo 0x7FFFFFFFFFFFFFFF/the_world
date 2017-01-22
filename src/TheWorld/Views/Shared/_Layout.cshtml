@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The World - @ViewBag.Title</title>
+    <link href="~/lib/semantic/dist/semantic.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="ui container">
+        <br>
+        <div class="ui secondary menu">
+            <div class="header item">Edde Rocks!</div>
+            <a class="active item" asp-controller="app" asp-action="index">
+                Home
+            </a>
+            <a class="item" asp-controller="app" asp-action="contact">
+                Contact
+            </a>
+            <a class="item" asp-controller="app" asp-action="about">
+                About
+            </a>
+            <div class="right menu">
+                <div class="item">
+                    <div class="ui icon input">
+                        <input type="text" placeholder="Search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+                <a class="ui item">
+                    Logout
+                </a>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+        <br>
+        <div class="ui grid">
+            <div class="four wide column">
+                <div class="ui secondary vertical pointing fluid menu">
+                    <a class="item">
+                        Home
+                    </a>
+                    <a class="item">
+                        Messages
+                    </a>
+                    <a class="item active">
+                        Friends
+                    </a>
+                </div>
+            </div>
+            <div class="twelve wide column">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/semantic/dist/semantic.min.js"></script>
+    <script src="~/lib/lodash/dist/lodash.min.js"></script>
+    @RenderSection("scripts", false)
+</body>
+</html>
